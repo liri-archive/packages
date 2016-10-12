@@ -1,0 +1,41 @@
+# Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+
+pkgname=calamares
+pkgver=2.4.1
+pkgrel=1
+pkgdesc='Distribution-independent installer framework'
+arch=('i686' 'x86_64')
+license=('GPL3')
+url="https://calamares.io"
+depends=('qt5-svg' 'qt5-webengine' 'kconfig' 'kcoreaddons' 'ki18n' 'kcoreaddons' 'solid' 'yaml-cpp'
+         'parted' 'libatasmart' 'udisks2' 'polkit-qt5' 'kpmcore' 'kparts' 'python' 'boost')
+makedepends=('git' 'extra-cmake-modules' 'qt5-tools')
+options=('!staticlibs')
+backup=('usr/share/calamares/modules/bootloader.conf'
+        'usr/share/calamares/modules/displaymanager.conf'
+        'usr/share/calamares/modules/initcpio.conf'
+        'usr/share/calamares/modules/unpackfs.conf')
+source=("https://github.com/calamares/calamares/releases/download/v${pkgver}/calamares-${pkgver}.tar.gz")
+sha1sums=('fe31004c9abc936669eb0301afc3343e1f475660')
+
+prepare() {
+	mkdir -p build
+}
+
+build() {
+	cd build
+	cmake ../${pkgname}-${pkgver} \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_BUILD_TYPE=Release \
+		-DCMAKE_INSTALL_LIBDIR=lib
+	make
+}
+
+package() {
+	cd build
+	make DESTDIR="${pkgdir}" install
+
+	cd ../${pkgname}-${pkgver}
+	install -Dm644 "settings.conf" "$pkgdir/usr/share/calamares/settings.conf"
+	install -Dm644 "calamares.desktop" "$pkgdir/usr/share/applications/calamares.desktop"
+}
