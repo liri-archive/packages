@@ -1,7 +1,7 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
-pkgname=liri-calamares-git
-pkgver=20161013.943cbdd
+pkgname=liri-calamares-branding-git
+pkgver=20161013.d73a039
 pkgrel=1
 pkgdesc="Liri OS branding and customizations for Calamares"
 arch=('i686' 'x86_64' 'armv6h' 'armv7h')
