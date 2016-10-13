@@ -9,8 +9,8 @@ url='http://liri.io'
 license=('GPL3')
 depends=('qt5-declarative')
 makedepends=('git' 'extra-cmake-modules')
-conflicts=('qt5-accountsservice')
-replaces=('qt5-accountsservice')
+conflicts=('qtaccountsservice-git' 'qt5-accountsservice')
+replaces=('qtaccountsservice-git' 'qt5-accountsservice')
 provides=('qt5-accountsservice')
 groups=('liri-git')
 
