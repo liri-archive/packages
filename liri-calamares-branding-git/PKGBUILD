@@ -1,12 +1,13 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=liri-calamares-branding-git
-pkgver=20161013.33f6881
+pkgver=20161013.1030554
 pkgrel=1
 pkgdesc="Liri OS branding and customizations for Calamares"
 arch=('any')
 url='http://liri.io'
 license=('GPL3')
+depends=('os-prober')
 makedepends=('git' 'extra-cmake-modules')
 conflicts=('liri-calamares-branding')
 replaces=('liri-calamares-branding')
