@@ -7,12 +7,13 @@ pkgdesc="Terminal application and modules for Liri OS"
 arch=('i686' 'x86_64' 'armv6h' 'armv7h')
 url='https://liri.io'
 license=('GPL3')
-depends=('vibe-git')
+depends=('vibe-git' 'glib2')
 makedepends=('git' 'extra-cmake-modules')
 conflicts=('hawaii-terminal-git' 'papyros-terminal-git' 'papyros-qmltermwidget-git' 'liri-terminal')
 replaces=('hawaii-terminal-git' 'papyros-terminal-git' 'papyros-qmltermwidget-git' 'liri-terminal')
 provides=('liri-terminal')
 groups=('liri-git')
+install=$pkgname.install
 
 _gitroot="git://github.com/lirios/terminal.git"
 _gitbranch=develop
