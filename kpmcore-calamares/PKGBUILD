@@ -1,0 +1,42 @@
+# Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
+
+_pkgname=kpmcore
+pkgname=${_pkgname}-calamares
+pkgver=2.2.1
+pkgrel=1
+pkgdesc="Library for managing partitions"
+arch=(i686 x86_64)
+url="http://kde.org/applications/system/kdepartitionmanager/"
+license=(GPL2)
+depends=(kio parted)
+conflicts=(kpmcore)
+makedepends=(extra-cmake-modules python)
+optdepends=('e2fsprogs: ext2/3/4 support'
+	    'xfsprogs: XFS support'
+	    'jfsutils: JFS support'
+	    'reiserfsprogs: Reiser support'
+	    'ntfs-3g: NTFS support'
+            'dosfstools: FAT32 support'
+            'f2fs-tools: F2FS support')
+source=("http://download.kde.org/stable/${_pkgname}/$pkgver/src/${_pkgname}-$pkgver.tar.xz")
+md5sums=('a7e97c9a4fb3b02e463f488fcf761acb')
+
+prepare() {
+  mkdir -p build
+}
+
+build() {
+  cd build
+  cmake ../${_pkgname}-$pkgver \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_LIBDIR=lib \
+    -DBUILD_TESTING=OFF
+  make
+}
+
+package() {
+  cd build
+  make DESTDIR="$pkgdir" install
+}

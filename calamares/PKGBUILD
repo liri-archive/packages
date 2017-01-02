@@ -8,7 +8,7 @@ arch=('i686' 'x86_64')
 license=('GPL3')
 url="https://calamares.io"
 depends=('qt5-svg' 'qt5-webengine' 'kconfig' 'kcoreaddons' 'ki18n' 'solid' 'yaml-cpp'
-         'parted' 'libatasmart' 'udisks2' 'polkit-qt5' 'kpmcore' 'kparts' 'python' 'boost')
+         'parted' 'libatasmart' 'udisks2' 'polkit-qt5' 'kpmcore-calamares' 'kparts' 'python' 'boost')
 makedepends=('git' 'extra-cmake-modules' 'qt5-tools')
 options=('!staticlibs')
 backup=('usr/share/calamares/modules/bootloader.conf'
