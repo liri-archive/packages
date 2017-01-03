@@ -31,7 +31,7 @@ prepare() {
 
 build() {
 	cd build
-	qmake CONFIG+=QTWEBENGINE_ENABLED ../${_gitname}
+	PREFIX=/usr qmake CONFIG+=QTWEBENGINE_ENABLED ../${_gitname}
 	make
 }
 
