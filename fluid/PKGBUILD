@@ -3,13 +3,14 @@
 pkgname=fluid
 pkgver=0.9.0
 pkgrel=1
-pkgdesc="Components for Qt Quick applications"
+pkgdesc="Components for Qt Quick applications with Material Design and Universal"
 arch=('i686' 'x86_64' 'armv6h' 'armv7h')
 url='https://liri.io'
 license=('MPL2')
 depends=('qt5-quickcontrols2' 'qt5-graphicaleffects' 'qt5-svg')
 makedepends=('extra-cmake-modules')
-conflicts=('fluid-git')
+conflicts=('qml-material' 'fluid-git')
+replaces=('qml-material')
 groups=('liri')
 source=("https://github.com/lirios/${pkgname}/releases/download/v${pkgver}/${pkgname}-${pkgver}.tar.xz")
 sha256sums=('1e198730a855ab8662c4ebb4f13bf5b9b142ddac9971f101acfbfd68a98cd554')
