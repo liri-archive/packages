@@ -1,0 +1,39 @@
+stable:
+- kpmcore-calamares
+- calamares
+- liri-calamares-branding
+- fluid
+- vibe
+- qt5-accountsservice
+- liri-wayland
+- liri-themes
+- liri-wallpapers
+- liri-workspace
+- liri-shell
+- liri-settings
+- liri-terminal
+- liri-appcenter
+- liri-files
+- material-theme-gtk
+- paper-icon-theme
+
+unstable:
+- kpmcore-calamares
+- calamares
+- liri-calamares-branding-git
+- fluid-git
+- vibe-git
+- qt5-accountsservice-git
+- liri-wayland-git
+- liri-themes-git
+- liri-wallpapers-git
+- liri-workspace-git
+- liri-shell-git
+- liri-settings-git
+- liri-terminal-git
+- liri-appcenter-git
+- liri-files-git
+- slime-engine-git
+- liri-browser-git
+- material-theme-gtk-git
+- paper-icon-theme-git
