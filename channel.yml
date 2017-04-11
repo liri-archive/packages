@@ -1,5 +1,4 @@
 stable:
-- kpmcore-calamares
 - calamares
 - liri-calamares-branding
 - fluid
@@ -18,7 +17,6 @@ stable:
 - paper-icon-theme
 
 unstable:
-- kpmcore-calamares
 - calamares
 - liri-calamares-branding-git
 - fluid-git
