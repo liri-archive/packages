@@ -2,4 +2,5 @@
 *.pkg.tar.xz
 /fluid-git/fluid/
 /qt5-accountsservice-git/qtaccountsservice/
+/qt5-gsettings-git/qtgsettings/
 /liri-wallpapers-git/wallpapers/
