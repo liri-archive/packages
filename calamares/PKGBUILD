@@ -3,8 +3,8 @@
 _tag=3.1
 
 pkgname=calamares
-pkgver=3.1.0
-pkgrel=3
+pkgver=3.1.4
+pkgrel=1
 pkgdesc='Distribution-independent installer framework'
 arch=('i686' 'x86_64')
 license=('GPL3')
@@ -18,7 +18,7 @@ backup=('usr/share/calamares/modules/bootloader.conf'
         'usr/share/calamares/modules/initcpio.conf'
         'usr/share/calamares/modules/unpackfs.conf')
 source=("https://github.com/calamares/calamares/releases/download/v${_tag}/calamares-${pkgver}.tar.gz")
-sha1sums=('1cb9399158cbd536f6cb54af44e18fd6d39c8ac8')
+sha256sums=('8255eb9b001b9b1271771c1796eb8217be78299c0a4e7f20e432b3dd4f5d371f')
 
 prepare() {
 	mkdir -p build
