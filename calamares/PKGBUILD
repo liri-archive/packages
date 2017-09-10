@@ -11,7 +11,7 @@ license=('GPL3')
 url="https://calamares.io"
 depends=('qt5-svg' 'qt5-webengine' 'kconfig' 'kcoreaddons' 'ki18n' 'solid' 'yaml-cpp'
          'parted' 'libatasmart' 'udisks2' 'polkit-qt5' 'kpmcore>=3.1.0' 'kparts'
-         'pythonqt>=3.2' 'boost-libs')
+         'python' 'boost-libs')
 makedepends=('git' 'extra-cmake-modules' 'qt5-tools' 'qt5-translations' 'boost')
 options=('!staticlibs')
 backup=('usr/share/calamares/modules/bootloader.conf'
