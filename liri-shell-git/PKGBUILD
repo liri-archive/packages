@@ -1,7 +1,7 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=liri-shell-git
-pkgver=20170910.5ab3dd21
+pkgver=20170918.72c55245
 pkgrel=1
 pkgdesc="QtQuick and Wayland based shell for convergence"
 arch=('i686' 'x86_64' 'armv6h' 'armv7h')
@@ -11,6 +11,7 @@ depends=('qt5-tools' 'qt5-wayland' 'qt5-accountsservice-git' 'qt5-gsettings-git'
          'libqtxdg' 'pam' 'liri-wayland-git' 'libliri-git' 'vibe-git' 'liri-workspace-git' 'liri-platformtheme-git')
 optdepends=('weston: nested mode support')
 makedepends=('git' 'liri-qbs-shared-git')
+options=(debug !strip)
 conflicts=('hawaii-shell-git' 'papyros-shell-git' 'liri-shell')
 replaces=('hawaii-shell-git' 'papyros-shell-git' 'liri-shell')
 provides=('liri-shell')
