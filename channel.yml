@@ -22,7 +22,7 @@ stable:
 - liri-calculator
 - liri-browser
 - liri-text
-- plymout
+- plymouth
 
 unstable:
 - calamares
@@ -48,4 +48,4 @@ unstable:
 - liri-calculator-git
 - liri-browser-git
 - liri-text-git
-- plymout
+- plymouth
