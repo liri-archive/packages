@@ -273,7 +273,7 @@ pacman -Sy
 
 # Fetch sources and update pkgver for git packages
 msg "Refreshing package..."
-/bin/entrypoint -c "makepkg --noconfirm -od" || exit $?
+makepkg --noconfirm -od || exit $?
 
 # Build only if we don't have a previous build
 should_build_package
@@ -281,6 +281,6 @@ if [ $? -eq 0 ]; then
     set -e
 
     msg "Building package..."
-    /bin/entrypoint -c "makepkg --noconfirm -s"
+    makepkg --noconfirm -s
     sync_repo
 fi
