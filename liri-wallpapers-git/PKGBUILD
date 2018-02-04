@@ -1,7 +1,7 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=liri-wallpapers-git
-pkgver=20170915.30.45f24d6
+pkgver=20180203.31.5a5d824
 pkgrel=1
 pkgdesc="Wallpapers for Liri OS"
 arch=('any')
@@ -29,7 +29,8 @@ build() {
 	qbs setup-toolchains --type gcc /usr/bin/g++ gcc
 	qbs setup-qt /usr/bin/qmake-qt5 qt5
 	qbs config profiles.qt5.baseProfile gcc
-	qbs build --no-install -d build profile:qt5 qbs.installRoot:/ qbs.installPrefix:usr
+	qbs build --no-install -d build profile:qt5 \
+		modules.lirideployment.prefix:/usr
 }
 
 package() {

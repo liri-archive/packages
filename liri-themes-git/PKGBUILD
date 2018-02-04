@@ -1,7 +1,7 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=liri-themes-git
-pkgver=20171125.105.da8cfd3
+pkgver=20180203.110.01132ae
 pkgrel=1
 pkgdesc="Themes for uniform look and feel throughout Liri OS"
 arch=('i686' 'x86_64' 'armv6h' 'armv7h')
@@ -35,7 +35,8 @@ build() {
 	qbs setup-toolchains --type gcc /usr/bin/g++ gcc
 	qbs setup-qt /usr/bin/qmake-qt5 qt5
 	qbs config profiles.qt5.baseProfile gcc
-	qbs build --no-install -d build profile:qt5 qbs.installRoot:/ qbs.installPrefix:usr
+	qbs build --no-install -d build profile:qt5 \
+		modules.lirideployment.prefix:/usr
 }
 
 package() {
