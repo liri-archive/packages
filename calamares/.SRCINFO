@@ -26,6 +26,7 @@ pkgbase = calamares
 	depends = kparts
 	depends = python
 	depends = boost-libs
+	depends = kcrash
 	options = !staticlibs
 	backup = usr/share/calamares/modules/bootloader.conf
 	backup = usr/share/calamares/modules/displaymanager.conf
