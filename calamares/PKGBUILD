@@ -31,6 +31,7 @@ build() {
 		-DCMAKE_INSTALL_PREFIX=/usr \
 		-DCMAKE_BUILD_TYPE=Release \
 		-DCMAKE_INSTALL_LIBDIR=lib \
+		-DSKIP_MODULES="dummycpp dummyprocess dummypython dummypythonqt" \
 		-DWITH_CRASHREPORTER:BOOL=OFF
 	make
 }
