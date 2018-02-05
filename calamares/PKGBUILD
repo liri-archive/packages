@@ -1,10 +1,10 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
-_tag=3.1.4
+_tag=3.1.12
 
 pkgname=calamares
-pkgver=3.1.4
-pkgrel=7
+pkgver=3.1.12
+pkgrel=1
 pkgdesc='Distribution-independent installer framework'
 arch=('i686' 'x86_64')
 license=('GPL3')
@@ -19,7 +19,7 @@ backup=('usr/share/calamares/modules/bootloader.conf'
         'usr/share/calamares/modules/initcpio.conf'
         'usr/share/calamares/modules/unpackfs.conf')
 source=("https://github.com/calamares/calamares/releases/download/v${_tag}/calamares-${pkgver}.tar.gz")
-sha256sums=('8255eb9b001b9b1271771c1796eb8217be78299c0a4e7f20e432b3dd4f5d371f')
+sha256sums=('86551d55d6aa719382eb9a58406b60c5cd4cae5c5c17d84ad6ab3e0199e5a94c')
 
 prepare() {
 	mkdir -p build
