@@ -26,6 +26,7 @@
         "plymouth"
     ],
     "unstable": [
+        "calamares",
         "liri-calamares-branding-git",
         "liri-qbs-shared-git",
         "fluid-git",
