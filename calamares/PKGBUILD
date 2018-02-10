@@ -18,11 +18,16 @@ backup=('usr/share/calamares/modules/bootloader.conf'
         'usr/share/calamares/modules/displaymanager.conf'
         'usr/share/calamares/modules/initcpio.conf'
         'usr/share/calamares/modules/unpackfs.conf')
-source=("https://github.com/calamares/calamares/releases/download/v${_tag}/calamares-${pkgver}.tar.gz")
-sha256sums=('86551d55d6aa719382eb9a58406b60c5cd4cae5c5c17d84ad6ab3e0199e5a94c')
+source=("https://github.com/calamares/calamares/releases/download/v${_tag}/calamares-${pkgver}.tar.gz"
+        'fix-cmake-policy.patch')
+sha256sums=('86551d55d6aa719382eb9a58406b60c5cd4cae5c5c17d84ad6ab3e0199e5a94c'
+            'c004d57560c39aada7b2de68d665b96b430786454499c7fb7e57af4c31bd4b4c')
 
 prepare() {
 	mkdir -p build
+
+	cd ${pkgname}-${pkgver}
+	patch -Np1 -i "${srcdir}/fix-cmake-policy.patch"
 }
 
 build() {

@@ -1,0 +1,14 @@
+diff -ura calamares.orig/CMakeLists.txt calamares/CMakeLists.txt
+--- calamares.orig/CMakeLists.txt	2018-01-02 15:37:36.000000000 +0100
++++ calamares/CMakeLists.txt	2018-02-05 21:00:31.662556904 +0100
+@@ -33,6 +33,10 @@
+ 
+ cmake_minimum_required( VERSION 3.2 )
+ 
++if(POLICY CMP0071)
++  cmake_policy(SET CMP0071 NEW)
++endif()
++
+ set( CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/CMakeModules" )
+ 
+ set( CMAKE_CXX_STANDARD 14 )
