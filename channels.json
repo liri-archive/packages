@@ -1,8 +1,8 @@
 {
     "stable": [
         "calamares",
-        "liri-calamares-branding",
         "liri-qbs-shared",
+        "liri-calamares-branding",
         "fluid",
         "libliri",
         "qt5-accountsservice",
@@ -27,8 +27,8 @@
     ],
     "unstable": [
         "calamares",
-        "liri-calamares-branding-git",
         "liri-qbs-shared-git",
+        "liri-calamares-branding-git",
         "fluid-git",
         "libliri-git",
         "qt5-accountsservice-git",
