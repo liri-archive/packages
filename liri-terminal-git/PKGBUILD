@@ -1,13 +1,13 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=liri-terminal-git
-pkgver=20180412.143.bd61aee
+pkgver=20180424.162.1efa746
 pkgrel=1
 pkgdesc="Terminal application and modules for Liri OS"
 arch=('i686' 'x86_64' 'armv6h' 'armv7h')
 url='https://liri.io'
 license=('GPL3')
-depends=('vibe-git' 'glib2' 'dconf')
+depends=('qt5-gsettings-git' 'glib2' 'dconf')
 makedepends=('git' 'liri-qbs-shared-git')
 conflicts=('hawaii-terminal-git' 'papyros-terminal-git' 'papyros-qmltermwidget-git' 'liri-terminal')
 replaces=('hawaii-terminal-git' 'papyros-terminal-git' 'papyros-qmltermwidget-git' 'liri-terminal')
