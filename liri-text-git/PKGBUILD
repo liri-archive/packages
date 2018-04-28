@@ -1,4 +1,5 @@
-# Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+# Maintainer: Andrew Penkrat <contact.aldrog@gmail.com>
+# Contributor: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
 pkgname=liri-text-git
 pkgver=20170611.bdefd70
@@ -9,6 +10,7 @@ url='https://liri.io'
 license=('GPL3')
 depends=('fluid-git')
 makedepends=('git' 'qbs' 'qt5-tools')
+options=(debug !strip)
 conflicts=('liri-text')
 replaces=('liri-text')
 provides=('liri-text')
@@ -22,7 +24,7 @@ md5sums=('SKIP')
 
 pkgver() {
 	cd ${srcdir}/${_gitname}
-	echo "$(git log -1 --format="%cd" --date=short | tr -d '-').$(git log -1 --format="%h")"
+	echo "$(git log -1 --format="%cd" --date=short | tr -d '-').$(git rev-list --count HEAD).$(git log -1 --format="%h")"
 }
 
 prepare() {
@@ -35,7 +37,8 @@ build() {
 	qbs setup-toolchains --type gcc /usr/bin/g++ gcc
 	qbs setup-qt /usr/bin/qmake-qt5 qt5
 	qbs config profiles.qt5.baseProfile gcc
-	qbs build --no-install -d build profile:qt5 qbs.installRoot:/ qbs.installPrefix:usr
+	qbs build --no-install -d build profile:qt5 \
+		modules.lirideployment.prefix:/usr
 }
 
 package() {
