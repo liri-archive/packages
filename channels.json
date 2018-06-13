@@ -25,6 +25,7 @@
         "liri-calculator",
         "liri-browser",
         "liri-text",
+	"xdg-desktop-portal-liri",
         "plymouth"
     ],
     "unstable": [
@@ -53,6 +54,7 @@
         "liri-calculator-git",
         "liri-browser-git",
         "liri-text-git",
+	"xdg-desktop-portal-liri-git",
         "plymouth"
     ]
 }
