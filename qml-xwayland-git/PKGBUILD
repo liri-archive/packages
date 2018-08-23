@@ -1,23 +1,23 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
-pkgname=liri-xwayland-git
+pkgname=qml-xwayland-git
 pkgver=20180814.80.4434e41
 pkgrel=1
-pkgdesc="XWayland QML plugin for Liri Shell"
+pkgdesc="XWayland plugin for QtQuick Wayland compositors"
 arch=('i686' 'x86_64' 'armv6h' 'armv7h')
 url='https://liri.io'
 license=('GPL3')
 depends=('qt5-declarative' 'qt5-wayland')
 makedepends=('git' 'liri-qbs-shared-git' 'xcb-util-cursor' 'libxcursor')
 options=(debug !strip)
-conflicts=('liri-xwayland')
-replaces=('liri-xwayland')
-provides=('liri-xwayland')
+conflicts=('qml-xwayland')
+replaces=('qml-xwayland')
+provides=('qml-xwayland')
 groups=('liri-git')
 
-_gitroot="git://github.com/lirios/xwayland.git"
+_gitroot="git://github.com/lirios/qml-xwayland.git"
 _gitbranch=develop
-_gitname=xwayland
+_gitname=qml-xwayland
 source=(${_gitname}::${_gitroot}#branch=${_gitbranch})
 md5sums=('SKIP')
 
