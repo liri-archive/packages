@@ -1,23 +1,23 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
-pkgname=qml-xwayland-git
-pkgver=20180924.67.8ffd882
+pkgname=liri-pulseaudio-git
+pkgver=20180603.71.ee850e7
 pkgrel=1
-pkgdesc="XWayland support for QtQuick Wayland compositors"
+pkgdesc="PulseAudio support for Liri Shell"
 arch=('i686' 'x86_64' 'armv6h' 'armv7h')
-url='https://liri.io'
-license=('GPL3')
-depends=('qt5-declarative' 'qt5-wayland' 'xorg-server-xwayland')
-makedepends=('git' 'liri-qbs-shared-git' 'xcb-util-cursor' 'libxcursor')
+url="https://liri.io"
+license=('LGPL3')
+depends=('fluid-git' 'pulseaudio')
+makedepends=('git' 'liri-qbs-shared-git')
 options=(debug !strip)
-conflicts=('qml-xwayland')
-replaces=('qml-xwayland')
-provides=('qml-xwayland')
+conflicts=('liri-pulseaudio')
+replaces=('liri-pulseaudio')
+provides=('liri-pulseaudio')
 groups=('liri-git')
 
-_gitroot="git://github.com/lirios/qml-xwayland.git"
+_gitroot="git://github.com/lirios/pulseaudio.git"
 _gitbranch=develop
-_gitname=qml-xwayland
+_gitname=pulseaudio
 source=(${_gitname}::${_gitroot}#branch=${_gitbranch})
 md5sums=('SKIP')
 
@@ -33,8 +33,7 @@ build() {
 	qbs config profiles.qt5.baseProfile gcc
 	qbs build --no-install -d build profile:qt5 \
 		modules.lirideployment.prefix:/usr \
-		modules.lirideployment.qmlDir:/usr/lib/qt/qml \
-		modules.lirideployment.pluginsDir:/usr/lib/qt/plugins
+		modules.lirideployment.qmlDir:/usr/lib/qt/qml
 }
 
 package() {
