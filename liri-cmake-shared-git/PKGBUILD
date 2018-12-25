@@ -1,22 +1,22 @@
 # Maintainer: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
 
-pkgname=qt5-udev-git
-pkgver=r54.ba2d937
+pkgname=liri-cmake-shared-git
+pkgver=r24.f81d3b9
 pkgrel=1
-pkgdesc="Qt-style wrapper for udev"
-arch=('i686' 'x86_64' 'armv6h' 'armv7h')
+pkgdesc="Additional macros and functions for CMake"
+arch=('any')
 url='https://liri.io'
-license=('LGPL3')
-depends=('qt5-base')
-makedepends=('git' 'liri-cmake-shared-git')
-conflicts=('qt5-udev')
-replaces=('qt5-udev')
-provides=('qt5-udev')
+license=('BSD')
+depends=('extra-cmake-modules')
+makedepends=('git')
+conflicts=('liri-cmake-shared')
+replaces=('liri-cmake-shared')
+provides=('liri-cmake-shared')
 groups=('liri-git')
 
-_gitroot="git://github.com/lirios/qtudev.git"
+_gitroot="git://github.com/lirios/cmake-shared.git"
 _gitbranch=develop
-_gitname=qtudev
+_gitname=cmake-shared
 source=(${_gitname}::${_gitroot}#branch=${_gitbranch})
 md5sums=('SKIP')
 
@@ -36,17 +36,14 @@ build() {
 	cd build
 	cmake ../${_gitname} \
 		-DCMAKE_BUILD_TYPE=Release \
-		-DCMAKE_INSTALL_PREFIX=/usr \
-		-DBUILD_TESTING:BOOL=OFF \
-		-DINSTALL_SYSCONFDIR=/etc \
-		-DINSTALL_LIBDIR=/usr/lib \
-		-DINSTALL_LIBEXECDIR=/usr/lib \
-		-DINSTALL_QMLDIR=/usr/lib/qt/qml \
-		-DINSTALL_PLUGINSDIR=/usr/lib/qt/plugins
+		-DCMAKE_INSTALL_PREFIX=/usr
 	make
 }
 
 package() {
 	cd build
 	make DESTDIR="$pkgdir" install
+
+	mkdir -p $pkgdir/usr/share/licenses/${pkgname}
+	cp ../${_gitname}/LICENSE.BSD $pkgdir/usr/share/licenses/${pkgname}
 }
